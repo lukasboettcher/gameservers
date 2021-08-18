@@ -15,7 +15,7 @@ jobs:
   build:
     strategy:
       matrix:
-        image: [ arma, backup, csgo, gmod, minecraft, teamspeak, terraria ]
+        image: [ arma, backup, csgo, gmod, minecraft, terraria ]
         
     runs-on: ubuntu-latest
     permissions:
