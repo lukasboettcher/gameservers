@@ -1,4 +1,4 @@
-FROM adoptopenjdk:16-jre
+FROM openjdk:slim-buster
 
 ENV DEBIAN_FRONTEND=noninteractive
 
