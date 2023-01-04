@@ -29,6 +29,7 @@ COPY --chown=1000:1000 *.cfg /data/arma_ds/garrysmod/cfg/
 RUN mkdir -p /data/steamcmd
 RUN echo 'passwordAdmin = "${PASS_RCON}"' >> /data/arma_ds/garrysmod/cfg/server.cfg
 RUN echo 'password = "${PASS}"' >> /data/arma_ds/garrysmod/cfg/server.cfg
+RUN sed -ie "s/steam_username/$STEAM_USER/g" /data/start-arma.sh
 
 RUN curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar -xzC /data/steamcmd
 
