@@ -1,33 +1,17 @@
-FROM docker.io/openjdk:slim-buster
+FROM docker.io/openjdk:18-slim-bullseye
 
 ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt update && \
-    apt install jq nano curl -y && \
-    apt clean
-
-RUN addgroup --gid 1000 minecraft \
-    && adduser --system --shell /bin/false --uid 1000 --ingroup minecraft --home /data minecraft
-
 EXPOSE 25565
-
-COPY start.sh          /files/start.sh
-COPY download-paper.sh /files/download-paper.sh
-COPY server.properties /files/server.properties
-
-# paper
-#RUN sh /files/download-paper.sh
-
-#vanilla
-RUN curl --silent -o /files/server.jar $(curl --silent $(curl https://launchermeta.mojang.com/mc/game/version_manifest.json | jq -r '.latest.release as $latest | .versions[] | select(.id == $latest) | .url') | jq -r '.downloads.server.url')
-
-
-USER 1000
-
-# VOLUME ["/data"]
-
 WORKDIR /data
 
-RUN echo "eula=true" > eula.txt
+RUN apt update && apt install jq nano curl -y 
+RUN useradd -ru 1000 minecraft && chown 1000:1000 /data
+RUN curl -s -o /srv/server.jar $(curl -s $(curl -s https://launchermeta.mojang.com/mc/game/version_manifest.json | jq -r '.latest.release as $latest | .versions[] | select(.id == $latest) | .url') | jq -r '.downloads.server.url')
 
-CMD [ "sh", "/files/start.sh" ]
+COPY start.sh          /srv/start.sh
+# COPY download-paper.sh /srv/download-paper.sh
+COPY server.properties /srv/server.properties
+
+USER 1000:1000
+
+CMD [ "sh", "/srv/start.sh" ]
