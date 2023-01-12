@@ -1,6 +1,6 @@
 FROM docker.io/openjdk:18-slim-bullseye
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive TZ=Europe/Berlin LC_ALL=C
 EXPOSE 25565
 WORKDIR /data
 
