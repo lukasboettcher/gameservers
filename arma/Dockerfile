@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive TZ=Europe/Berlin LC_ALL=C
 
 ENV USER arma
 ENV HOME /data
