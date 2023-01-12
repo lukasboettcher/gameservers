@@ -7,10 +7,9 @@ ENV HOME /data
 ENV SERVER $HOME/csgo_ds
 
 RUN apt update && \
-    apt install curl lib32gcc-s1 locales -y
+    apt install curl lib32gcc-s1 net-tools locales -y
 
 RUN locale-gen en_US.UTF-8 \
-    && update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
     && dpkg-reconfigure --frontend=noninteractive locales \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -31,4 +30,4 @@ RUN curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.t
 EXPOSE 27015/tcp
 EXPOSE 27015/udp
 
-CMD [ "sh", "/data/start-csgo.sh" ]
+CMD [ "bash", "/data/start-csgo.sh" ]
