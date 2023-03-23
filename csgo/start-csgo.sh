@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 steamcmd/steamcmd.sh +force_install_dir /data/csgo_ds +login anonymous +app_update 740 +quit
 sed -i -e 's#\./steam\.sh #\./steamcmd\.sh #g' csgo_ds/srcds_run # edit autoupdate for server version
+rm /data/csgo_ds/bin/libgcc_s.so.1
 csgo_ds/srcds_run -game csgo -console -usercon  -port 27015 -net_port_try 1 -maxplayers_override 10 -tickrate 128 \
         -nobreakpad -game csgo -console -usercon -secure -authkey "${API}" \
         -autoupdate -steam_dir /data/steamcmd -steamcmd_script /data/steamcmd/runscript_csgo \
