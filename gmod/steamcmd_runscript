@@ -1,0 +1,4 @@
+force_install_dir /data/persistent/gmod_ds
+login anonymous
+app_update 4020
+quit
