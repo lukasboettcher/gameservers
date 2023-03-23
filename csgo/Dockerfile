@@ -7,7 +7,7 @@ ENV HOME /data
 ENV SERVER $HOME/csgo_ds
 
 RUN apt update && \
-    apt install curl lib32gcc-s1 net-tools locales -y
+    apt install curl lib32gcc-s1 lib32stdc++6 net-tools locales -y
 
 RUN locale-gen en_US.UTF-8 \
     && dpkg-reconfigure --frontend=noninteractive locales \
