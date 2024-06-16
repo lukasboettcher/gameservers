@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:jammy
 
 ENV DEBIAN_FRONTEND=noninteractive TZ=Europe/Berlin LC_ALL=C
 
