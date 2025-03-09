@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        image: [ arma, backup, csgo, cs2, gmod, minecraft, terraria ]
+        image: [ arma, backup, csgo, cs2, dayz, gmod, minecraft, terraria ]
     runs-on: ubuntu-latest
     permissions:
       contents: read
