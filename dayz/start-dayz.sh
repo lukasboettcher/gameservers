@@ -1,3 +1,6 @@
 #!/usr/bin/bash
-steamcmd/steamcmd.sh +login $STEAM_USER +force_install_dir /data/dayz_ds +app_update 223350 +quit
-cd /data/dayz_ds;./DayZServer -config=server.cfg -port=2302 -BEpath=battleye -profiles=profiles -dologs -adminlog -netlog -freezecheck
+cp /srv/server.cfg /data/server.cfg
+echo '' >> /data/server.cfg
+echo '\npasswordAdmin = "${PASS_RCON}";' >> /data/server.cfg
+echo 'password = "${PASS}";' >> /data/server.cfg
+exec /data/DayZServer -config=/data/server.cfg -port=2302 -BEpath=battleye -profiles=profiles -dologs -adminlog -netlog -freezecheck
