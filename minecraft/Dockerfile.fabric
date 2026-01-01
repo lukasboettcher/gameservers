@@ -1,4 +1,4 @@
-FROM docker.io/openjdk:21-slim-bullseye
+FROM eclipse-temurin:25-jre
 
 ENV DEBIAN_FRONTEND=noninteractive TZ=Europe/Berlin LC_ALL=C
 EXPOSE 25565
