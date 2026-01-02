@@ -2,12 +2,13 @@
 {
         "superadmin"
         {
-                "lukas"                       "STEAM_0:0:47170938"
+                "EG-j0K3R"                       "STEAM_0:0:47170938"
         }
 
         "admin"
         {
-                "lukas"                       "STEAM_0:0:47170938"
+               // "EG-j0K3R"                       "STEAM_0:0:47170938"
         }
+
 
 }
