@@ -1,0 +1,13 @@
+"Users"
+{
+        "superadmin"
+        {
+                "lukas"                       "STEAM_0:0:47170938"
+        }
+
+        "admin"
+        {
+                "lukas"                       "STEAM_0:0:47170938"
+        }
+
+}

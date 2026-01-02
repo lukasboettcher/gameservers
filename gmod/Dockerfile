@@ -22,6 +22,7 @@ USER $USER
 
 COPY --chown=1000:1000 start-server.sh /data/start-server.sh
 COPY --chown=1000:1000 *.cfg /data/cfgs/
+COPY --chown=1000:1000 users.txt /data/cfgs/
 COPY --chown=1000:1000 steamcmd_runscript /data/cfgs/
 
 RUN curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar -xzC /data/persistent/steamcmd
