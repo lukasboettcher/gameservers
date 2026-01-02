@@ -7,5 +7,5 @@ cp $HOME/cfgs/*.cfg /data/persistent/gmod_ds/garrysmod/cfg/
 sed -i -e 's#\./steam\.sh #\./steamcmd\.sh #g' /data/persistent/gmod_ds/srcds_run # edit autoupdate for server version
 /data/persistent/gmod_ds/srcds_run -game garrysmod -console -usercon  -port 27015 -net_port_try 1 -maxplayers 24 \
         -autoupdate -steam_dir /data/persistent/steamcmd -steamcmd_script $HOME/cfgs/steamcmd_runscript \
-        +gamemode terrortown +map ttt_minecraft_b5 +host_workshop_collection 286987864 -authkey "${API}" \
+        +gamemode terrortown +map ttt_minecraft_b5 +host_workshop_collection "${WORKSHOP_COLL}" \
         +rcon_password "${PASS_RCON}" +sv_password "${PASS}" +sv_setsteamaccount "${GSLT}"
