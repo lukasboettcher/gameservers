@@ -5,13 +5,13 @@ EXPOSE 25565
 WORKDIR /data
 
 RUN apt update && apt install jq nano curl -y 
-RUN useradd -ru 2000 minecraft && chown 2000:2000 /data
+RUN chown 1000:1000 /data
 COPY start.sh          /srv/start.sh
 COPY download-fabric.sh /srv/download-fabric.sh
 COPY server.properties /srv/server.properties
 
 RUN bash /srv/download-fabric.sh
 
-USER 2000:2000
+USER 1000:1000
 
 CMD [ "sh", "/srv/start.sh" ]
